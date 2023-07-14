@@ -34,10 +34,6 @@ int main() {
   char direzione;
   int uscito = 0;
 
-  printf("Interattiva(S , N)\n");
-  scanf("%c", &select);
-  select = toupper(select);
-
   printf("Quante colonne vuoi? \n");
   scanf("%d", &colonne);
   printf("Quante righe vuoi? \n");
@@ -133,260 +129,209 @@ int main() {
   printf("Primo Labirinto\n");
 
   // MOVIMENTI
-  switch (select) {
-  case 'S': // MANUALE
+  while (uscito == 0) {
+    int trovato = 0;
+    // chiedere in input la direzione (N, S, E, O)
+    printf("Inserisci direzione: \n(N, S, E,O)\n");
+    scanf("%c", &direzione);
+    direzione = toupper(direzione);
 
-    while (uscito == 0) {
-      int trovato = 0;
-      // chiedere in input la direzione (N, S, E, O)
-      printf("Inserisci direzione: \n(N, S, E,O)\n");
-      scanf("%c", &direzione);
-      direzione = toupper(direzione);
-
-      // uso uno switch per verificare i vari casi di input
-      switch (direzione) {
-      case 'N':
-        for (y = 0; y < righe; y++) { // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) {
-            if (labirinto[y][i] == 'o') {
-              int z = y - 1;
-              if (labirinto[z][i] == '#' && pass_wall > 0) {
-                pass_wall--;
-                labirinto[z][i] = 'o';
-                labirinto[y][i] = ' ';
-                printf("Trapani: %d\n", pass_wall);
-                break;
-              }
-              if (labirinto[z][i] == '#') {
-                break;
-              }
-              if (labirinto[z][i] == '_') {
-                uscito = 1;
-              }
-              if (labirinto[z][i] == '$') {
-                monete += 10;
-              }
-              if (labirinto[z][i] == '!') {
-                monete -= 10;
-              }
-              if (labirinto[z][i] == 'T') {
-                pass_wall += 3;
-              }
+    // uso uno switch per verificare i vari casi di input
+    switch (direzione) {
+    case 'N':
+      for (y = 0; y < righe; y++) { // quest va a mettere i verticali
+        for (i = 0; i < colonne; i++) {
+          if (labirinto[y][i] == 'o') {
+            int z = y - 1;
+            if (labirinto[z][i] == '#' && pass_wall > 0) {
+              pass_wall--;
               labirinto[z][i] = 'o';
               labirinto[y][i] = ' ';
+              printf("Trapani: %d\n", pass_wall);
               break;
             }
-          }
-        }
-        // PRINT
-        for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) { // questo l'orrizzontale
-            printf("%c", labirinto[y][i]);
-          } // chiusura for i
-          printf("\n");
-        } // chiusura for y
-        numeroPassi++;
-        punteggio--;
-        printf("Trapani: %d\n", pass_wall);
-        printf("punteggio: %d\n", punteggio);
-        printf("Passi: %d\n", numeroPassi);
-        break;
-
-      case 'S':
-        for (y = 0; y < righe; y++) { // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) {
-            if (labirinto[y][i] == 'o') {
-              int z = y + 1;
-              if (labirinto[z][i] == '#' && pass_wall > 0) {
-                pass_wall--;
-                labirinto[z][i] = 'o';
-                labirinto[y][i] = ' ';
-                printf("Trapani: %d\n", pass_wall);
-                break;
-              }
-              if (labirinto[z][i] == '#') {
-                break;
-              }
-              if (labirinto[z][i] == '_') {
-                uscito = 1;
-              }
-              if (labirinto[z][i] == '$') {
-                punteggio += 10;
-              }
-              if (labirinto[z][i] == '!') {
-                punteggio -= 10;
-              }
-              if (labirinto[z][i] == 'T') {
-                pass_wall += 3;
-              }
-              labirinto[z][i] = 'o';
-              labirinto[y][i] = ' ';
+            if (labirinto[z][i] == '#') {
               break;
             }
-          }
-          // SOLO PER IL SUD
-          if (labirinto[y + 1][i] == 'o') {
+            if (labirinto[z][i] == '_') {
+              uscito = 1;
+            }
+            if (labirinto[z][i] == '$') {
+              monete += 10;
+            }
+            if (labirinto[z][i] == '!') {
+              monete -= 10;
+            }
+            if (labirinto[z][i] == 'T') {
+              pass_wall += 3;
+            }
+            labirinto[z][i] = 'o';
+            labirinto[y][i] = ' ';
             break;
           }
         }
-        // PRINT
-        for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) { // questo l'orrizzontale
-            printf("%c", labirinto[y][i]);
-          } // chiusura for i
-          printf("\n");
-        } // chiusura for y
-        numeroPassi++;
-        punteggio--;
-        printf("Trapani: %d\n", pass_wall);
-        printf("punteggio: %d\n", punteggio);
-        printf("Passi: %d\n", numeroPassi);
-        break;
-
-      case 'E':
-        for (y = 0; y < righe; y++) { // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) {
-            if (labirinto[y][i] == 'o') {
-              int z = i + 1;
-              if (labirinto[y][z] == '#' && pass_wall > 0) {
-                pass_wall--;
-                labirinto[y][z] = 'o';
-                labirinto[y][i] = ' ';
-                printf("Trapani: %d\n", pass_wall);
-                break;
-              }
-              if (labirinto[y][z] == '#') {
-                break;
-              }
-              if (labirinto[y][z] == '_') {
-                uscito = 1;
-              }
-              if (labirinto[y][z] == '$') {
-                punteggio += 10;
-              }
-              if (labirinto[y][z] == '!') {
-                punteggio -= 10;
-              }
-              if (labirinto[y][z] == 'T') {
-                pass_wall += 3;
-              }
-              labirinto[y][z] = 'o';
-              labirinto[y][i] = ' ';
-              break;
-            }
-          }
-        }
-        // PRINT
-        for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) { // questo l'orrizzontale
-            printf("%c", labirinto[y][i]);
-          } // chiusura for i
-          printf("\n");
-        } // chiusura for y
-        numeroPassi++;
-        punteggio--;
-        printf("Trapani: %d\n", pass_wall);
-        printf("punteggio: %d\n", punteggio);
-        printf("Passi: %d\n", numeroPassi);
-        break;
-
-      case 'O':
-        for (y = 0; y < righe; y++) { // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) {
-            if (labirinto[y][i] == 'o') {
-              int z = i - 1;
-              if (labirinto[y][z] == '#' && pass_wall > 0) {
-                pass_wall--;
-                labirinto[y][z] = 'o';
-                labirinto[y][i] = ' ';
-                break;
-              }
-              if (labirinto[y][z] == '#') {
-                break;
-              }
-              if (labirinto[y][z] == '_') {
-                uscito = 1;
-              }
-              if (labirinto[y][z] == '$') {
-                punteggio += 10;
-              }
-              if (labirinto[y][z] == '!') {
-                punteggio -= 10;
-              }
-              if (labirinto[y][z] == 'T') {
-                pass_wall += 3;
-              }
-              labirinto[y][z] = 'o';
-              labirinto[y][i] = ' ';
-              break;
-            }
-          }
-        }
-        // PRINT
-        for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) { // questo l'orrizzontale
-            printf("%c", labirinto[y][i]);
-          } // chiusura for i
-          printf("\n");
-        } // chiusura for y
-        numeroPassi++;
-        punteggio--;
-        printf("Trapani: %d\n", pass_wall);
-        printf("punteggio: %d\n", punteggio);
-        printf("Passi: %d\n", numeroPassi);
-        break;
       }
-    } // chiusura while;
-    printf(
-        "CONGRATULAZIONI HAI FINITO IL GIOCO, QUESTO E' IL TUO PUNTEGGIO: \n");
-    printf("%d\n", punteggio);
-    break;
+      // PRINT
+      for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
+        for (i = 0; i < colonne; i++) { // questo l'orrizzontale
+          printf("%c", labirinto[y][i]);
+        } // chiusura for i
+        printf("\n");
+      } // chiusura for y
+      numeroPassi++;
+      punteggio--;
+      printf("Trapani: %d\n", pass_wall);
+      printf("punteggio: %d\n", punteggio);
+      printf("Passi: %d\n", numeroPassi);
+      break;
 
-  case 'N': // IA
-    while (uscito == 0) {
-      int trovato = 0;
+    case 'S':
+      for (y = 0; y < righe; y++) { // quest va a mettere i verticali
+        for (i = 0; i < colonne; i++) {
+          if (labirinto[y][i] == 'o') {
+            int z = y + 1;
+            if (labirinto[z][i] == '#' && pass_wall > 0) {
+              pass_wall--;
+              labirinto[z][i] = 'o';
+              labirinto[y][i] = ' ';
+              printf("Trapani: %d\n", pass_wall);
+              break;
+            }
+            if (labirinto[z][i] == '#') {
+              break;
+            }
+            if (labirinto[z][i] == '_') {
+              uscito = 1;
+            }
+            if (labirinto[z][i] == '$') {
+              punteggio += 10;
+            }
+            if (labirinto[z][i] == '!') {
+              punteggio -= 10;
+            }
+            if (labirinto[z][i] == 'T') {
+              pass_wall += 3;
+            }
+            labirinto[z][i] = 'o';
+            labirinto[y][i] = ' ';
+            break;
+          }
+        }
+        // SOLO PER IL SUD
+        if (labirinto[y + 1][i] == 'o') {
+          break;
+        }
+      }
+      // PRINT
+      for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
+        for (i = 0; i < colonne; i++) { // questo l'orrizzontale
+          printf("%c", labirinto[y][i]);
+        } // chiusura for i
+        printf("\n");
+      } // chiusura for y
+      numeroPassi++;
+      punteggio--;
+      printf("Trapani: %d\n", pass_wall);
+      printf("punteggio: %d\n", punteggio);
+      printf("Passi: %d\n", numeroPassi);
+      break;
 
-      if (numeroPassi == 50) {
-        uscito = 1;
-        printf("GAME OVER\n");
-      } else {
-        for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
-          for (i = 0; i < colonne; i++) { // questo l'orrizzontale
-            if (labirinto[y][i] == 'o') {
-              if (labirinto[y][i + 1] != '#' && visitato[y][i+1] != '1') {
-                direzione = 'E';
-              } // if est
-              else if (labirinto[y - 1][i] != '#' && visitato[y - 1][i] != '1') {
-                direzione = 'N';
-              } // if sud
-              else if (labirinto[y + 1][i] != '#' && visitato[y+1][i] != '1') {
-                direzione = 'S';
-              } // if nord
-              else if (labirinto[y][i - 1] != '#' && visitato[y][i-1] != '1') {
-                direzione = 'O';
-              } // if ovest
-              else if(visitato[y-1][i] == 1){
-                direzione = 'N';
-              }
-              else if(visitato[y+1][i] == 1){
-                direzione = 'S';
-              }
-              else if(visitato[y][i+1] == 1){
-                direzione = 'E';
-              }
-              else if(visitato[y][i-1] == 1){
-                direzione = '0';
-              }
-              else {
-                uscito = 1;
-                printf("GAME OVER\n");
-              }
+    case 'E':
+      for (y = 0; y < righe; y++) { // quest va a mettere i verticali
+        for (i = 0; i < colonne; i++) {
+          if (labirinto[y][i] == 'o') {
+            int z = i + 1;
+            if (labirinto[y][z] == '#' && pass_wall > 0) {
+              pass_wall--;
+              labirinto[y][z] = 'o';
+              labirinto[y][i] = ' ';
+              printf("Trapani: %d\n", pass_wall);
+              break;
+            }
+            if (labirinto[y][z] == '#') {
+              break;
+            }
+            if (labirinto[y][z] == '_') {
+              uscito = 1;
+            }
+            if (labirinto[y][z] == '$') {
+              punteggio += 10;
+            }
+            if (labirinto[y][z] == '!') {
+              punteggio -= 10;
+            }
+            if (labirinto[y][z] == 'T') {
+              pass_wall += 3;
+            }
+            labirinto[y][z] = 'o';
+            labirinto[y][i] = ' ';
+            break;
+          }
+        }
+      }
+      // PRINT
+      for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
+        for (i = 0; i < colonne; i++) { // questo l'orrizzontale
+          printf("%c", labirinto[y][i]);
+        } // chiusura for i
+        printf("\n");
+      } // chiusura for y
+      numeroPassi++;
+      punteggio--;
+      printf("Trapani: %d\n", pass_wall);
+      printf("punteggio: %d\n", punteggio);
+      printf("Passi: %d\n", numeroPassi);
+      break;
 
-            } // chiusura if pallino
-          }   // chiusura for i
-        }     // chiusura for y*/
-      }       // chiusura else
-  } 
-  return 0;
-} 
+    case 'O':
+      for (y = 0; y < righe; y++) { // quest va a mettere i verticali
+        for (i = 0; i < colonne; i++) {
+          if (labirinto[y][i] == 'o') {
+            int z = i - 1;
+            if (labirinto[y][z] == '#' && pass_wall > 0) {
+              pass_wall--;
+              labirinto[y][z] = 'o';
+              labirinto[y][i] = ' ';
+              break;
+            }
+            if (labirinto[y][z] == '#') {
+              break;
+            }
+            if (labirinto[y][z] == '_') {
+              uscito = 1;
+            }
+            if (labirinto[y][z] == '$') {
+              punteggio += 10;
+            }
+            if (labirinto[y][z] == '!') {
+              punteggio -= 10;
+            }
+            if (labirinto[y][z] == 'T') {
+              pass_wall += 3;
+            }
+            labirinto[y][z] = 'o';
+            labirinto[y][i] = ' ';
+            break;
+          }
+        }
+      }
+      // PRINT
+      for (y = 0; y < righe; y++) {     // quest va a mettere i verticali
+        for (i = 0; i < colonne; i++) { // questo l'orrizzontale
+          printf("%c", labirinto[y][i]);
+        } // chiusura for i
+        printf("\n");
+      } // chiusura for y
+      numeroPassi++;
+      punteggio--;
+      printf("Trapani: %d\n", pass_wall);
+      printf("punteggio: %d\n", punteggio);
+      printf("Passi: %d\n", numeroPassi);
+      break;
+    }
+  } // chiusura while;
+  printf(
+      "CONGRATULAZIONI HAI FINITO IL GIOCO, QUESTO E' IL TUO PUNTEGGIO: \n");
+  printf("%d\n", punteggio);
+return 0;
 }
