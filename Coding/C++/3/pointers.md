@@ -20,4 +20,5 @@ the method data() used with a vector returns the pointer pointing to the first e
 -substract a pointer from a pointer, gives an int. both pointers have to point to the same type, the addresses are substracted and then divided by the size of the type pointed to by the pointers
 -comparing two pointers, gives a int
 each time u sum or substract int to pointers, it will increase by 4 * int, bc the space for each int is 4 bytes
-if we want to assigna to a variable the value of itself but in the next address we may use value = *(ptr+1) and can be written like this ptr[1]
+if we want to assigna to a variable the value of itself but in the next address we may use value = *(ptr+1) and can be written like this ptr[1].
+We can create an pointer with the type of void (void *ptr;) this is called amorphous pointer bc it ca ne any value of any type.

@@ -12,8 +12,12 @@ void fun();
 
 void by_ptr(int*);
 
+int function(int);
+
+float max(float,float,float);
 
 int globalVar = 0;              //this is a global variable
+
 int main(){
     float y =square(10.1,20.);
     cout<<y<<endl;
@@ -23,6 +27,14 @@ int main(){
     by_ptr(pointer);            //pass the pointer
     cout<<"variable: "<<variable<<endl; 
 
+    int var = 1;
+	var = function(var);
+	var = function(var);
+	var = function(var);
+	cout << var << endl;
+
+    float a = max(max(1,2),3);
+    cout<<a<<endl;
 }
 
 float square(float x,float z){
@@ -37,4 +49,18 @@ void fun(){
 void by_ptr(int* ptr) 
 {
 	*ptr = *ptr + 1;        //add +1 a the pointer where variable is located
+}
+
+inline int function(int parameter){     //inline function
+    return parameter*2;
+}
+
+float max(float a, float b) 
+{
+    return (a>b)?a:b;
+}
+
+float max(float a, float b,float c) 
+{
+    return (a>b)?(a>c?a:c):(b>c?b:c);
 }
