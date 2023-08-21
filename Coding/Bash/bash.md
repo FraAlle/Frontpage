@@ -1,4 +1,4 @@
-#BASH STUFF
+# BASH STUFF
 .bash_profile(located in home in linux) is a hidden file that changes the terminale proprieties. to make correctly loaded the changes we must use
 source .bash_profile
 we can create some alias for commands (alias ll="ls -la"), make variables (export USER="Francesco"), change style of the cmd(export PS1=">> " this change the $ in the cmd with >>).
@@ -6,7 +6,7 @@ we can create some alias for commands (alias ll="ls -la"), make variables (expor
     most of command are stored in bin(u can check this by using /bin/"command").
     grep filter with some string we put in(can be recursive).
 
-#REDIRECT OUTPUTS
+# REDIRECT OUTPUTS
 basic:
     echo "hello">hello.txt  (overwrite)
     echo "hello">>hello.txt (do not overwrite)
