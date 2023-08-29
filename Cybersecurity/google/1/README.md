@@ -4,9 +4,9 @@
 
 **Compliance** is the process of adhering to internal standards and external regulations and enables organizations to avoid fines and security breaches.
 
-**[Security frameworks](Security_frameworks.md)** are guidelines used for building plans to help mitigate risks and threats to data and privacy.
+[Security frameworks](Security_frameworks.md) are guidelines used for building plans to help mitigate risks and threats to data and privacy.
 
-**[Security controls](Security_controls.md)** are safeguards designed to reduce specific security risks. They are used with security frameworks to establish a strong security posture.
+[Security controls](Security_controls.md) are safeguards designed to reduce specific security risks. They are used with security frameworks to establish a strong security posture.
 
 **Security posture** is an organization’s ability to manage its defense of critical assets and data and react to change. A strong security posture leads to lower risk for the organization.
 
