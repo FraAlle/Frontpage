@@ -34,8 +34,11 @@ An **internal threat** can be a current or former employee, an external vendor, 
 *    *Whaling*: A form of spear phishing. Threat actors target company executives to gain access to sensitive data.
 *    *Vishing*: The exploitation of electronic voice communication to obtain sensitive information or to impersonate a known source.
 *    *Smishing*: The use of text messages to trick users, in order to obtain sensitive information or to impersonate a known source.
+
 **Supply-chain attack** target systems, applications, hardware and software to locate vulnerabilities.
+
 **Cryptographic attack** affects secure forms to communicate between sender and reciver.
+
 *    *Birthday*
 *    *Collision*
 *    *Downgrade*
