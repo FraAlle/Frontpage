@@ -51,3 +51,14 @@ An **internal threat** can be a current or former employee, an external vendor, 
 **Security assessment and testing** focuses on conducting security control testing, collecting and analyzing data and conducting security audits to monitor for risks, threats and vulnerabilities(set up differents access levels for each user). 
 **Security operations**  focuses on conducting investigations and implementing preventative measures.
 **Software development security** focuses on using secure coding practice.
+
+## COMMON TOOLS
+
+SIEM is an application that collects and analyzes log data to monitor critical activities.
+Splunk is a data analysis platform. Splunk Enterprise is used to retain, analyze and search an organization's log data.
+Google's Chronicle, is a cloud native SIEM that stores security data for search and analysis.
+Playbook is a manual that provides details about any operational action(how to respond to an accident), these change from company to another.
+    *Chain of custody* is the process of documenting evidence possession and control during an incident lifecycle.
+
+    *Protecting and preserving evidence* is the process of properlyworking with fragile and volatile digital evidence, understand wich ones are fragile and volatiles is crucial. You will consult the *order of volatility* which is a sequence outlining the order of data that must be preserved from first to alst(it prioritizes volatile data). 
+Network protocol analyzer(packet sniffer).
