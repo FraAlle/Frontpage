@@ -29,16 +29,16 @@ An **internal threat** can be a current or former employee, an external vendor, 
 ## ATTACKS
 
 **Phishing**:
-    *Business Email Compromise (BEC)*:A threat actor sends an email message that seems to be from a known source to make a seemingly legitimate request for information, in order to obtain a financial advantage.
-    *Spear phishing*: A malicious email attack that targets a specific user or group of users. The email seems to originate from a trusted source.
-    *Whaling*: A form of spear phishing. Threat actors target company executives to gain access to sensitive data.
-    *Vishing*: The exploitation of electronic voice communication to obtain sensitive information or to impersonate a known source.
-    *Smishing*: The use of text messages to trick users, in order to obtain sensitive information or to impersonate a known source.
+*    *Business Email Compromise (BEC)*:A threat actor sends an email message that seems to be from a known source to make a seemingly legitimate request for information, in order to obtain a financial advantage.
+*    *Spear phishing*: A malicious email attack that targets a specific user or group of users. The email seems to originate from a trusted source.
+*    *Whaling*: A form of spear phishing. Threat actors target company executives to gain access to sensitive data.
+*    *Vishing*: The exploitation of electronic voice communication to obtain sensitive information or to impersonate a known source.
+*    *Smishing*: The use of text messages to trick users, in order to obtain sensitive information or to impersonate a known source.
 **Supply-chain attack** target systems, applications, hardware and software to locate vulnerabilities.
 **Cryptographic attack** affects secure forms to communicate between sender and reciver.
-    *Birthday*
-    *Collision*
-    *Downgrade*
+*    *Birthday*
+*    *Collision*
+*    *Downgrade*
 
 
 ## CISSP DOMAINS
