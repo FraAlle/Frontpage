@@ -38,7 +38,6 @@ An **internal threat** can be a current or former employee, an external vendor, 
 **Supply-chain attack** target systems, applications, hardware and software to locate vulnerabilities.
 
 **Cryptographic attack** affects secure forms to communicate between sender and reciver.
-
 *    *Birthday*
 *    *Collision*
 *    *Downgrade*
