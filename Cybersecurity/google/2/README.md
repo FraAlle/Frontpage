@@ -24,12 +24,18 @@
 *   **Authorize** means being accountable for the security and privacy risks that may exist in an organization.
 *   **Monitor** means to be aware of how systems are operating.
 
-## (Risks)[risks.md]
+## [Risks](risks.md)
 
-## (Vulnerabilities)[vulnerabilities.md]
+## [Vulnerabilities](vulnerabilities.md)
 
-## (CSF Framework)[CSF_framework.md]
+## [CSF Framework](CSF_framework.m)
 
-## (Open Web Apllication Security Project)[OWASP.md]
+## [Open Web Apllication Security Project](OWASP.md)
 
-## (Security audits)[Security_audits.md]
+## [Security audits](Security_audits.md)
+
+## Log
+
+*   **Firewall log** is a record of attempted connections for incoming traffic from the internet.
+*   **Network log** is a record of all computers and devices that enter and leave the network.
+*   **Server log** is a record of events related to services such as websites, emails or files shares.
