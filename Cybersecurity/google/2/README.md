@@ -39,3 +39,38 @@
 *   **Firewall log** is a record of attempted connections for incoming traffic from the internet.
 *   **Network log** is a record of all computers and devices that enter and leave the network.
 *   **Server log** is a record of events related to services such as websites, emails or files shares.
+
+SIEM tool is an application that colllects and analyzes log data to monitor critical activities in an organizaition.
+
+## Differents SIEM tools
+
+*   **Self hosted SIEM tools** require organizations to install. operate and mantain the tool using thei own physical infrastructure such as server capacity. Then these applications are managed and maintained by the IT departament. This is required when an organization is required to maintain physical control over confidential data.
+*   **Cloud hosted SIEM tools** are maintened by the SIEM providers, making them accessible through the internet.
+*   **Hybrid solution** is used to take the advantages from the cloud solution but maintaining physical control over confidential data.
+
+*Splunk*
+
+Some of the common SIEM tools are Splunk Enterprise, Splunk Cloud and Chronicle.
+Splunk is a data analysis platform and the enterprise version provides SIEM solutions. Is a self hosted tool used to retain, analyze and search an organization's log data to provide security information and alerts in real time.
+Splunk cloud is a cloud based hosted used to collect, search and monitor log data. It can be used for organization running hybrid or cloud only environments.
+Splunk dashboards:
+*   **Security posture dashboard** is designed for security operations centers(SOCs). It displays the last 24 hours of an organization's notable security-related events and trend and allowa security professionals to determine if security infrestructure an d policies are performing as designed.
+*   **Executive summary dashboard** analyzed and monitors the overall health of the organization over time, this helps security teams improve security measures that reduce risk.
+*   **Incident review dashboard** allows analysts to identify suspicious patterns that can occur in the event of an incident. It highlighting higher risk items that need immediate review by an analyst. This provide an visual timeline of the events leading up to an incident.
+*   **Risk analysis dashboard** helps identify risk for each object(IP). It shows changes in risk-related activity or behaviour, such as a user logging in outside of normal working hours or unusually high network traffic from a specific computer.
+
+*Google Chrnonicle*
+
+Google Chronicle is a cloud native tool that provides log monitoring, data analysis and data collection. It helps u collecting and analyzing log data according to:
+*   A specific asset
+*   A domain name
+*   A user
+*   An IP address
+His dashboard are:
+*   **Enterprise insights dashboard** identifies suspicious domain names in logs(indicators of compromise IOCs). Each result is labeled with a confidence score to indicate the likelihood of a threat. It also provides a severity level that indicates the significance of each threat to the organization. It is used to monitor login acccess attempts related to critical assets.
+*   **Data ingestion and health dashboard** shows the number of event logs, log sources and success rates of data being proceseed into Chronicle. This is used to ensure that log sources are correctly configured and that logs are received withouth error.
+*   **IOC matched dashboard** indicate the top threats, risk and vulrenabilities to the organization. Pro uses this dashboard to observe domain names, IP and devices IOCs over time in order to identify trends.
+*   **Main dashboard** displays a high-level summary of information related to the organization's data ingestion, alerting and event activity over time.
+*   **Rule detections dashboard** provides statistics related to incidents with the ighest occurrences, severities and detections over time. This dashboard is used to access a list of all the alerts triggered by a specific detection rule, such as rule designed to alert wheever a suer opens a known malicious attachment from an email.
+*   **User sign in overview dashboard** provides information about user access behaviour acress the organization, can use this dashboard to access a list of all user sign-in events to identify unusual user activity, such as a user signing in from multiple locations at the same time.
+
