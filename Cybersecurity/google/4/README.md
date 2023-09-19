@@ -9,3 +9,8 @@
 *   /tmp: This directory stores many temporary files.
 
 *   /mnt: This directory stands for “mount” and stores media, such as USB drives and hard drives.
+
+## SQL
+
+Foreign key: primary key in another table.
+While filtering sql querrys, the % means for any number of others charcters, the _ means only 1 other character(__ means 2, ___ means 3 etc).
