@@ -80,3 +80,27 @@ Some industry regulations:
 
 A **security audit** is a revies of an organization's security controls, policies and procedures.
 A **security assessment** is a check to determine how resilient current security implementations are against threats.
+
+## Cryptography
+
+Public Key Infrastructure(PKI) is an encryption method that secures the exchange of information online. Is a 2 step process.
+*   The first step is the exchange of encrypted information(asymmetric, symmetric or both). 
+*       Asymetric: involves the use of a public and private key pair for encryption. The public key can only be used to access the slot and add items(it can be shared with people all around the world to add items).  The private key allows to remove items inside, only the owner can access to the private key. This allow all people to see and send you encrypted information that only i can decrypt with the private key. This make the asymetric encryption a secure way to exchange info online, however is kinda slow. Two algorythm are RSA(these create 2 keys, one public and one private, key sizes are 1024,4048 or 4096bits) and DSA(generate keys with 2048 bits abd is used as complement to RSA public key).
+*       Symmetric: is faster and simple. This include the use of only one key to exchange information. Everyone with the key can create, delete or modify any data inside. Two algorythm are 3DES(generate keys that are 192 bits or three times as long, but has a limitation on the amount of data that ca be encrypted) and AES(generate keys that are 128,192 or 256 bits long, are safe from brute force attacks).
+PKI uses both type of encryption, depend on which is your priority at the moment, speed or security.
+A digital certificate is a file that verifies the identity of a public key holder.
+
+```
+openssl aes-256-cbc -pbkdf2 -a -d -in Q1.encrypted -out Q1.recovered -k ettubrute
+openssl command reverses the encrytion of the file with a secure symmetric cipher(aes-256-cbc)
+-pbkdf2 add extra security to the key
+-a desired encoding output
+-d decrypting
+-in specifies the input file and -out specifies the output file
+-k specifies the password(ettubrute in the example)
+```
+
+## Hashing
+
+An hash function is an algorithm that preduces a code that can't be decrypted. Are one-way process that do not generate decryption keys.
+In the MD5 encryption we can add some random strings before the hash begin to give more security to the files, this is called Salting.
