@@ -183,3 +183,60 @@ Purple team test are collaborative, focus on improving the security posture of t
 *   MFA
 *   CAPTCHA
 *   Password policies
+
+## Phising
+
+Phising kits are tool designed to avoid detection and are used from people with little technical background.
+Quick identify an phishing kit:
+1 attachments: files are infected and may cause troble to the system
+2 fake-data collection form: they ask for sensitive information
+3 fraudulent web links: malicious web pages that are deisgned to look like trusted brands.
+
+Nowdays hackers utilize smishing and vishing and others.
+**Smishing** is the use of test messages to obtain sensitive information or to impersonate a known source.
+**Vishing** is the exploitation of electronic voice communication to obtain sensitive information or impersonate a know source.
+**Spear phishing** is a subset of email phising where specific people are purposefully targeted, such as accountants of a small business.
+**Whaling** is an spear phishing where you aim for high-ranking executivies in an organization.
+
+## Malwares
+
+**Filesless malware** don't need to be installed by the user because it uses legitimate programs that are already installed to infect a pc, this type of infection reside in memory.
+**Rooktkits** provides remote administrative access to a computer, open a backdoor to systems. This malware is spread by the combination of two components: dropper and a loader. A dropper is a type of malware that comes packed with malicious code, if the file is opened the malicious code is executed and it hides itself on the target system. A loader is a type of malware that downloads strains of maicious code from an external source and install them onto a target system. With the loader is possible to set-up another malware, a botnet.
+**Botnet** is a collection of computers infected by malware that are under the control of a single hacker.
+
+## Web based exploits
+
+**Cross Site Scripting(XSS)** is an injection attack that inserts code into a vulnerable website or web app, these accats are often delivered by exploiting HTML and JS.
+*   Reflected: malicious script is sent to the server and activated during server's response(criminals send to a target a web link that appears to be secure, when they open it it send an HTTP request to the vulnerable site server, the attacker script is returned back to the innocent user's browser, here the browser loads malicious script because it trusts the server's response).
+*   Stored: maliscious script is injected directly on the server, attackers target elements of a site that are served to the user. These could be images and buttons that load when the page is visited, these elements activate the malicious code when a user simply visits the site.
+*   DOM-based: Document Object Model wich is basically the source code of the page. Malicious script exists in the web page a browswe loads, these attacks don't need to be sent to the server to activate. When the URL contains parameter value that reflect input from the user, criminals change those parameter with JS scripts in HTML tags.
+
+A **prepared statement** is a coding technique that executes SQL before passing them on to the database, with a few extra line of code a prepared statement executes the code before passing it on to the server.
+
+**Prevent injection attacks from SQL**
+*   In-band: uses the same communication channel to launch the attack and gather the results..
+*   Out-of-band: use a different communication channel, for example an attacker could use a malicious query to create a connection between a vulnerable website and a database they control. This separate channel would allow them to bypass any security controls that are in place on the website's server. These attacks are very uncommon because they only works if a feature is enable on the target server.
+*   Inferential SQL: occurs when an attacker is unable to directly see the results of thei attack, instead they can interpret the results by analyzing the behavior of the system. For example the attacker cause an error message on the login form to understand how is the db composed.
+
+## Threat modeling
+
+Is a process of identifying assets, their vulnerabilities and how each is exposed to threats. Creating them os a lengthy and detauled activity made by people who have years of experience in the field. There are 6 steps to define the scope of a model.
+1: the team determine what they're building by creating an ivnentory of assets and classifying them.
+2 identify threats: the team defines all potential threat actors, a threath actor is any person or group who present a security risk. Internal(an employee who intentionally expose an asset to harm) or external(a malicious hacker). Than the team  puts toghether all the info they gathered as an attack tree, is a diagram that maps threats to assets.
+3 characterize the environment: they consider how the customers and employees interact with the environment, other factors can be externals partners and third party vendors.
+4 analyze threats: examine existing protections and identify gaps. Then they rank them assigning them a risk score.
+5 mitigate risk: the group create their plan for defending against threats.
+6 evaluate findings: everything that has been done before is documented, fixes are applied and the team makes note of any successes they had. 
+
+Some frameworks are : STRIDE, PASTA, Trike and VAST.
+
+# PASTA(The Process for Attack Simulation and Threat Analysis)
+ 
+The PASTA framework has 7 stages:
+1 define business and security objectives: the team need to decide what their goals are. They need to understand thing like how personally identifiable information is handle.
+2 techical scope: identify the application component that must be evaluated.
+3 decompose the application: identify the existing controls that will protect user data from threats, this normally means working with the application developers to produce a data flow diagram.
+4 threat analysis: the team gets into their attacker mindset, research is done to collect the most up-to-date information on the type of attacks being used.
+5 vulnerability analysis: the team investigates potential vulnerabilities by considering the root of the problem.
+6 attack modeling: the team tests the vulnerabilities that were analyzed in stage five by simulating attacks.
+7 analyze risk and impact: the team assembles all the information they've collected in stages one through six.
