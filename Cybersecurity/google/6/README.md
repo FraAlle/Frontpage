@@ -65,10 +65,10 @@ IPv4 packets camps:
 ```
 Version: This field indicates the IP version. For an IPv4 header, IPv4 is used. 
 Internet Header Length (IHL): This field specifies the length of the IPv4 header including any Options.
-Type of Service (ToS): This field provides information about packet priority for delivery.
+Type of Service (ToS): This field provides information about packet priority for delivery. It is provided in hexadecimal value.
 Total Length: This field specifies the total length of the entire IP packet including the header and the data.
 Identification: Packets that are too large to send are fragmented into smaller pieces. This field specifies a unique identifier for fragments of an original IP packet so that they can be reassembled once they reach their destination.
-Flags: This field provides information about packet fragmentation including whether the original packet has been fragmented and if there are more fragments in transit.
+Flags: This field provides information about packet fragmentation including whether the original packet has been fragmented and if there are more fragments in transit(DF stands for Don'w fragment).
 Fragment Offset: This field is used to identify the correct sequence of fragments.
 Time to Live (TTL): This field limits how long a packet can be circulated in a network, preventing packets from being forwarded by routers indefinitely.
 Protocol: This field specifies the protocol used for the data portion of the packet.
