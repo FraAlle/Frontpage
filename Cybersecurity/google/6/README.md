@@ -91,3 +91,49 @@ Hop Limit: This field is similar to the IPv4 Time to Live field. The Hop Limit l
 Source Address: This field specifies the source address of the sender.
 Destination Address: This field specifies the destination address of the receiver.
 ```
+
+## Incident detecrion methods
+
+**Threat hunting** is the proactive search for threats on a network. Security professionals use threat hunting to uncover malicious activity that was not identified by detection tools and as a way to do further analysis on detections. Threat hunting is also used to detect threats before they cause damage. 
+
+**Threat intelligence** is an evidence-based threat information that provides context about existing or emerging threats. These can come from private or public sources like:
+*   Industry reports: often include details about attacker's tactics, techniques and procedures(TTP).
+*   Government advisories: include details about attackers' TTP
+*   Threat data feeds: provide a stream of threat-related data that can be used to help protect against sophisticated attackers like advanced persistent threats(APTs). By accessing additional information related to IoCs, security analyst can expand their viewpoint to obvserve the bigger picture.
+
+**Cyber deception** involvers techniques that deliberately deceive malicious actors with the goal of increasing detection and improving defensive strategies.
+
+**Honeypots** are systems or resources that are created as decoys vulnerable to attacks with the purpose of attracting potential intruders.
+
+## Indicators of compromise 
+
+Indicators of compromise(IoCs) are observable evidence that suggests sign of a potential security incident, the charts specific pieces of evidence that are associated with an attack. [Pyramid of pain](http://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html).
+
+**Indicator of attack(IoA)** are the series of observed events that indicate a real-time incident. Focus on identifying the behavioral evidence of an attacker.
+
+## Crowdsourcing
+
+Is the practice of gathering information using public input and collaboration. Threat intelligence platforms use crowdsourcing to collect information from the global cybersecurity community. Without this, attac,ers can performs the same attacks against multiple organizations.
+
+## Documentation
+
+**Digital forensic** is the process the practice of collecting and analyzing data to determine what has happened after an attack.
+
+**Chain of custody** is the process of documenting evidence possession and control during incident lifecycle. Once the evidence gets collected the chain of custody forms are introduced.
+
+There are 3 types of playbooks:
+*   non-automated: require step by step actions from the analyst
+*   automated: automate tasks in incident response processes(categorizing the severity of the incident or gahtering evidence, SOAR(Security Orchestration, Automation and Response) and SIEM can be configured as automated playbooks.)
+*   semi-automated: combine automated tasks with human actions
+
+## Triage
+
+Before an alert get escaleted it goes through a triage process, which they prioritizes incidents according to their level of importance or urgency.
+*   Receive and assess: this involves gathering as much information as possible about the alert, including details about the activity that triggered the alert
+*   Assign priority: security teams must prioritize how they respond to various incidents because not all incidents are equal
+*   Collect and analyze: involves gathering evidence from different sources, conducting external and document the investigative process.
+
+**Resilience** is the ability to prepare for, respond to and recover from disruptions. An example is site resilience, is used to ensure the availability of networks, data centers or other infrastructure when a disruption happens.
+*   Hot sites: is a duplicate of an organization's primary environment.
+*   Warm sites: contains a fully updated and configured version of the hot site. These are not fully operational and available for immediate use but can quickly be made operational after a  failure or disruption occurs.
+*   Cold sites: a backup facility equipped with some of the necessary infrastructure required to operate an organization's site. When a failure occurs, cold sites might not be ready to use and might need additional work to be operational.
